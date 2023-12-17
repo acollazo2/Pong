@@ -1,0 +1,12 @@
+
+
+-fix the angles the ball can go, right now the higher the speed and the lower the framerate then the more accurate the angles are. For example at 60fps and 200 speed
+the dx or dy gets rounded to 0 if the velocity component is less than 30, which equates to if the angle is 9 degrees from 0,90,180,270
+
+-improve ball paddle detection so it the ball still bounces off the paddle even if the entire ball isn't contained by the paddle
+
+-text render
+
+-possible bug if the ball is speed is really fast where dx and dy are big enough in that it causes the ball to jump over the paddle (the ball is never inside the paddle rect)
+so that it bypasses the collision detection. One solution could be to make dx and dy public and use them in the collision handler calculations to essentially make the paddles
+hitbox wider by adding dx or dy
